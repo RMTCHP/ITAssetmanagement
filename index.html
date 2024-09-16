@@ -3,110 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snipe-IT Google Sheets Integration</title>
+    <title>Asset Management System</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            line-height: 1.6;
-            color: #333;
+            margin: 0;
+            padding: 0;
             background-color: #f9f9f9;
+            color: #333;
         }
-        h1, h2, h3 {
-            color: #444;
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        a {
-            color: #0366d6;
+        header h1 {
+            margin: 0;
+        }
+        nav a {
+            color: white;
             text-decoration: none;
+            margin-left: 15px;
         }
-        a:hover {
-            text-decoration: underline;
+        .banner {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
         }
-        code {
-            background-color: #f6f8fa;
-            padding: 2px 4px;
-            border-radius: 3px;
-            font-size: 90%;
+        .banner h2 {
+            font-size: 2em;
+            margin: 0;
         }
-        pre {
-            background-color: #f6f8fa;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: white;
         }
-        ul, ol {
-            margin-bottom: 20px;
+        .features div {
+            text-align: center;
+            width: 20%;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .features div h3 {
+            margin-bottom: 10px;
+        }
+        .dashboard-preview {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .dashboard-preview img {
+            width: 80%;
             border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .section {
-            margin-bottom: 40px;
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Snipe-IT Google Sheets Integration</h1>
+    <header>
+        <h1>Asset Management System</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Asset Management</a>
+            <a href="#">User Management</a>
+            <a href="#">Reports</a>
+            <a href="#">Settings</a>
+        </nav>
+    </header>
 
-        <div class="section">
-            <p>Welcome to the Snipe-IT project! This project is a customized version of Snipe-IT that integrates with Google Sheets for asset management. It allows you to manage your organization's assets efficiently using a simple and familiar interface.</p>
-        </div>
+    <section class="banner">
+        <h2>Manage Your Organization's Assets Efficiently</h2>
+        <p>Track, manage, and maintain all your assets in one place.</p>
+        <button>Get Started</button>
+    </section>
 
-        <div class="section">
-            <h2>Project Description</h2>
-            <p>Snipe-IT is an open-source asset management system designed to track and manage your organization's assets, such as computers, phones, and other equipment. This version of Snipe-IT uses Google Sheets as the data backend, making it easy to manage and share asset data across your organization.</p>
+    <section class="features">
+        <div>
+            <h3>Asset Tracking</h3>
+            <p>Keep track of all your organization's assets easily.</p>
         </div>
+        <div>
+            <h3>User Management</h3>
+            <p>Assign assets to users and monitor their usage.</p>
+        </div>
+        <div>
+            <h3>License Management</h3>
+            <p>Manage software licenses and track their expirations.</p>
+        </div>
+        <div>
+            <h3>Maintenance Tracking</h3>
+            <p>Log and manage maintenance activities efficiently.</p>
+        </div>
+    </section>
 
-        <div class="section">
-            <h2>Getting Started</h2>
-            <ol>
-                <li>Clone the project from GitHub:
-                    <pre><code>git clone https://github.com/username/repository-name.git</code></pre>
-                </li>
-                <li>Install dependencies using Composer:
-                    <pre><code>composer install</code></pre>
-                </li>
-                <li>Configure the Google Sheets API:
-                    <ol>
-                        <li>Enable the Google Sheets API in your Google Cloud Console.</li>
-                        <li>Create credentials (API key or OAuth2 credentials) for your application.</li>
-                        <li>Update the <code>.env</code> file with the necessary credentials.</li>
-                    </ol>
-                </li>
-                <li>Run the application and start managing your assets through the web interface.</li>
-            </ol>
-        </div>
+    <section class="dashboard-preview">
+        <h2>Dashboard Overview</h2>
+        <img src="dashboard-example.png" alt="Dashboard Preview">
+        <p>Access your dashboard to get a detailed view of your assets and their statuses.</p>
+        <button>Go to Dashboard</button>
+    </section>
 
-        <div class="section">
-            <h2>Project Structure</h2>
-            <p>The project uses multiple Google Sheets to store different types of data. Below is an overview of the structure:</p>
-            <ul>
-                <li><strong>Assets</strong>: Stores information about assets including asset ID, name, category, purchase date, price, assigned user, and status.</li>
-                <li><strong>Users</strong>: Contains user information such as user ID, name, email, department, and role.</li>
-                <li><strong>AssetAssignments</strong>: Tracks asset assignments, linking assets to users with assignment and return dates.</li>
-                <li><strong>SoftwareLicenses</strong>: Manages software licenses, including license ID, software name, license key, assigned user, and expiration date.</li>
-                <li><strong>AssetCategories</strong>: Defines categories for assets, each with a unique ID and name.</li>
-                <li><strong>AssetMaintenance</strong>: Logs maintenance activities for assets, including maintenance ID, asset ID, date, type, cost, and technician.</li>
-                <li><strong>UsageHistory</strong>: Records the usage history of assets, tracking usage periods and associated users.</li>
-                <li><strong>Vendors</strong>: Lists vendors, including vendor ID, name, contact information, and address.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Contributing</h2>
-            <p>We welcome contributions to this project! Please refer to the <a href="CONTRIBUTING.md">contribution guidelines</a> for more information on how to get involved.</p>
-        </div>
-
-        <div class="section">
-            <h2>License</h2>
-            <p>This project is licensed under the <a href="LICENSE">MIT License</a>.</p>
-        </div>
-    </div>
+    <footer>
+        <p>&copy; 2024 Asset Management System | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>Contact us: <a href="mailto:support@assetmanagement.com">support@assetmanagement.com</a></p>
+    </footer>
 </body>
 </html>
